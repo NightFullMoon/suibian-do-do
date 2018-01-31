@@ -15,7 +15,7 @@ gulp.task('connect', function() {
         connect.server({
                 // host : '', //地址，可不写，不写的话，默认localhost
                 port: 3000, //端口号，可不写，默认8000
-                root: PROJECT, //当前项目主目录
+                root: OUTPUT, //当前项目主目录
                 livereload: true //自动刷新
         });
 });
@@ -26,7 +26,7 @@ gulp.task('reload', function() {
                 .pipe(connect.reload());
 });
 
-var lessFile = PROJECT + 'style/*.less';
+var lessFile = [PROJECT + 'style/*.less', PROJECT + 'style/*.css'];
 gulp.task('less',function(){
        var stream = gulp.src(lessFile)
                 .pipe(less())

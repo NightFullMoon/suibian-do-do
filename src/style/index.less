@@ -1,0 +1,32 @@
+.navbar-default {
+    background-color: white;
+    border-radius: 0px;
+    .navbar-nav>li>a {
+        &:after {
+            content: "";
+            width: 0%;
+            transition: width .3s, left .3s;
+            height: 1px;
+            display: block;
+            background-color: #a8a8a8;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+        }
+    }
+    .navbar-nav>li>a:hover,
+    .navbar-nav>.active>a,
+    .navbar-nav>.active>a:focus,
+    .navbar-nav>.active>a:hover {
+        background-color: inherit; // border-bottom:1px solid  #a8a8a8;
+        position: relative;
+        &:after {
+            width: 100%;
+            left: 0%;
+        }
+    }
+}
+
+///////////////////////////////////横线以上是全局部分
+// 案例介绍
+.case-block {}
